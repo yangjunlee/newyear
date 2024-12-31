@@ -17,16 +17,20 @@
             font-family: 'Arial', sans-serif;
             color: #333;
             text-align: center;
+            overflow: hidden;
         }
 
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
+            color: #ff6f61;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         p {
             font-size: 1.2em;
             margin-bottom: 30px;
+            color: #4a4a4a;
         }
 
         button {
@@ -38,6 +42,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         button:hover {
@@ -49,14 +54,77 @@
             margin-top: 20px;
             font-size: 1.5em;
             color: #4a4a4a;
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .decorations {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-30px);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>새해 복 많이 받으세요! 🎉</h1>
-    <p>2024년이 행복과 사랑으로 가득하길 바라요 💖</p>
+    <h1>새해 복 많이 받으세요! 🎉✨</h1>
+    <p>2025년이 행복과 사랑으로 가득하길 바라요 💖</p>
     <button onclick="showMessage()">메시지 열기</button>
-    <div class="message" id="message">항상 함께해줘서 고마워요. 사랑해요! 💕</div>
+    <div class="message" id="message">새해 복 많이 받아요! 😊 요즘 날도 추운데 감기 조심하고, 올 한 해는 더 따뜻하고 행복한 일들만 가득하길 바랄게요. 올해도 우리 자주 만나면서 재밌는 시간 많이 보냈으면 좋겠어요! 💕</div>
+
+    <div class="decorations">
+        <div class="star" style="top: 10%; left: 20%;"></div>
+        <div class="star" style="top: 30%; left: 50%;"></div>
+        <div class="star" style="top: 70%; left: 80%;"></div>
+        <div class="heart" style="top: 50%; left: 30%;">❤️</div>
+        <div class="heart" style="top: 20%; left: 70%;">💖</div>
+        <div class="heart" style="top: 80%; left: 40%;">💕</div>
+    </div>
 
     <script>
         function showMessage() {
